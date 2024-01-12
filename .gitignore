@@ -1,0 +1,4 @@
+/bin
+.env
+go.mod
+go.sum

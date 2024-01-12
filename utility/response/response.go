@@ -22,7 +22,7 @@ func Fail(Data interface{}, message string) Response {
 		message = "Fail"
 	}
 	return Response{
-		Success: true,
+		Success: false,
 		Message: message,
 		Data:    Data,
 	}
