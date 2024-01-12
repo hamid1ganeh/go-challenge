@@ -1,9 +1,10 @@
+
 # Go-Challemge
 First of all you need to configure you'r asw cli and then open the .env file and setup you'r SERVER_PORT,DB_REGION and DB_Name.
 
-# Technology in used
-1. Golang Programming language (https://golang.org/)
-2. AWS DynamoDB
-3. Serverless Framework (https://serverless.com/)
-4. AWS Lambda
-5. AWS API Gateway
+# Technologies used:
+1 - Golang Programming language (https://golang.org/)
+2 - AWS DynamoDB
+3 - Serverless Framework (https://serverless.com/)
+4 - AWS Lambda
+5 - AWS API Gateway
