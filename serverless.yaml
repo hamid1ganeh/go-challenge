@@ -1,13 +1,16 @@
-app: aws-golang-rest-api-with-dynamodb
-service: aws-golang-rest-api-with-dynamodb
+app: hmd-golang-challenge
+service: hmd-golang-challenge
 
 frameworkVersion: "3"
+
+plugins:
+  - serverless-offline
 
 provider:
   name: aws
   runtime: go1.x
   environment:
-    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+    DYNAMODB_TABLE: "hamid_devices"
   iam:
     role:
       statements:
@@ -19,28 +22,28 @@ provider:
             - dynamodb:PutItem
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
-          Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
+          Resource: "arn:aws:dynamodb:us-east-1:*:table/hamid_devices"
 
 functions:
   create:
-    handler: api/devices
+    handler: /bin/go-challenge
     package:
       include:
         - ./bin/go-challenge
     events:
       - http:
-          path: todos
+          path: api/devices
           method: post
           cors: true
 
   get:
-    handler: api/devices
+    handler: /bin/go-challenge
     package:
       include:
         - ./bin/go-challenge
     events:
       - http:
-          path: todos/{id}
+          path: api/devices/{id}
           method: get
           cors: true
  
@@ -62,4 +65,4 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: ${self:provider.environment.DYNAMODB_TABLE}
+        TableName:  "hamid_devices"
