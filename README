@@ -1,10 +1,10 @@
 Go-Challemge
 ============
 
-# Technology in used
-1. Golang Programming language [link](https://golang.org/)
+### Technology in used
+1. [Golang Programming language](https://golang.org/)
 2. AWS DynamoDB
-3. Serverless Framework [link](https://serverless.com/)
+3. [Serverless Framework](https://serverless.com/)
 4. AWS Lambda
 5. AWS API Gateway
 
