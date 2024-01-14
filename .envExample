@@ -1,3 +1,5 @@
 SERVER_PORT=1370
-DB_REGION=us-east-1
-DB_Name=hdm_devices
+DB_Name= hamid_challenge_devices
+AWS_REGION=us-east-1
+AWS_Accesskey=AKIATW3QENXA7J7JICXN
+AWS_SecretKey=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

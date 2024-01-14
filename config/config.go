@@ -7,8 +7,10 @@ import (
 
 type Config struct {
 	ServerPort   string `mapstructure:"SERVER_PORT"`
-	DbREGION string `mapstructure:"DB_REGION"`
 	DbName       string `mapstructure:"DB_Name"`
+	AWSREGION string `mapstructure:"AWS_REGION"`
+	AwsAccesskey string `mapstructure:"AWS_Accesskey"`
+	AwsSecretKey string `mapstructure:"AWS_SecretKey"`
 }
 
 var AppConfig Config

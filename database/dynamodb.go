@@ -7,15 +7,24 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"go-challenge/config"
+	"github.com/aws/aws-sdk-go/aws/credentials"
 )
 
 var dynamo *dynamodb.DynamoDB
 
+
 func ConnectDynamo() (db *dynamodb.DynamoDB) {
-	return dynamodb.New(session.Must(session.NewSession(&aws.Config{
-		Region: aws.String(config.AppConfig.DbREGION),
-	})))
+ 
+	sess, err := session.NewSession(&aws.Config{
+		Region: aws.String(config.AppConfig.AWSREGION),
+		Credentials: credentials.NewStaticCredentials(config.AppConfig.AwsAccesskey, config.AppConfig.AwsSecretKey, ""),
+	})
+	if err != nil {
+		log.Fatalf("Failed to create AWS session: %v", err)
+	}
+	return dynamodb.New(sess)
 }
+
 
 func CreateTable() {
 

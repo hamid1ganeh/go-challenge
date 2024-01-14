@@ -3,13 +3,17 @@ module go-challenge
 go 1.21.6
 
 require (
-	github.com/aws/aws-sdk-go v1.49.18
+	github.com/aws/aws-lambda-go v1.44.0
+	github.com/aws/aws-sdk-go v1.49.21
+	github.com/awslabs/aws-lambda-go-api-proxy v0.16.0
 	github.com/go-playground/validator/v10 v10.16.0
+	github.com/labstack/echo v3.3.10+incompatible
 	github.com/labstack/echo/v4 v4.11.4
 	github.com/spf13/viper v1.18.2
 )
 
 require (
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect

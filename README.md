@@ -26,7 +26,7 @@ In order to send http request you can use below examples:
 
 #### Create Endpoint:
 curl --request POST \
-  --url localhost:1370/api/devices \
+  --url https://4bktavifb3.execute-api.us-east-1.amazonaws.com/dev/api/devices \
   --header 'Content-Type: application/json' \
   --data '{
     "id": "/devices/id1",
@@ -37,7 +37,7 @@ curl --request POST \
 
 #### Get Endpoint:
 curl --request GET \
-  --url localhost:1370/api/devices/id1
+  --url https://4bktavifb3.execute-api.us-east-1.amazonaws.com/dev/api/devices/id1
 
 ## How to deploy
 

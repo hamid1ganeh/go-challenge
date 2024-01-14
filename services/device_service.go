@@ -14,8 +14,6 @@ import (
  
 func Create(device model.Device) (model.Device, error) {
 
-	log.Println(device)
-
 	dynamo := database.ConnectDynamo()
 
 	_, err := dynamo.PutItem(&dynamodb.PutItemInput{
@@ -41,7 +39,6 @@ func Create(device model.Device) (model.Device, error) {
 
 	if err != nil {
 		if aerr, ok := err.(awserr.Error); ok {
-
 			log.Println(aerr.Error())
 		}
 	} else {
@@ -54,7 +51,7 @@ func Create(device model.Device) (model.Device, error) {
  
  
 func  GetById(id string) (device model.Device,e error) {
- 
+
 	dynamo := database.ConnectDynamo()
 	result, err := dynamo.GetItem(&dynamodb.GetItemInput{
 				Key: map[string]*dynamodb.AttributeValue{
@@ -64,7 +61,6 @@ func  GetById(id string) (device model.Device,e error) {
 				},
 				TableName: aws.String(config.AppConfig.DbName),
 			})
-			
 
 			if err != nil {
 				if aerr, ok := err.(awserr.Error); ok {

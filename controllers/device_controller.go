@@ -31,15 +31,14 @@ func Store(c echo.Context) error {
 	show, _ := service.GetById(deviceStoreRequest.Id)
 
 	if show.Id == "" {
-		_,err := service.Create(device)
+		_, err := service.Create(device)
 		if err != nil {
-			return c.JSON(http.StatusInternalServerError, response.Fail(nil,err.Error()))
-	
-		}else
-		{
+			return c.JSON(http.StatusInternalServerError, response.Fail(nil, err.Error()))
+
+		} else {
 			return c.String(http.StatusCreated, "The new device is created successfully")
 		}
-	}else{
+	} else {
 
 		return c.JSON(http.StatusConflict, response.Conflict(nil, ""))
 	}
@@ -47,17 +46,17 @@ func Store(c echo.Context) error {
 }
 
 func Show(c echo.Context) error {
-	deviceId := "/devices/"+c.Param("id")
+	deviceId := "/devices/" + c.Param("id")
 	show, err := service.GetById(deviceId)
-	
+
 	if err != nil {
-		return c.JSON(http.StatusInternalServerError, response.Fail(nil,err.Error()))
+		return c.JSON(http.StatusInternalServerError, response.Fail(nil, err.Error()))
 
-	}else if show.Id == "" {
+	} else if show.Id == "" {
 
-		return c.JSON(http.StatusNotFound, response.NotFound(nil,""))
+		return c.JSON(http.StatusNotFound, response.NotFound(nil, ""))
 
-	}else{
+	} else {
 
 		return c.JSON(http.StatusOK, response.Success(show, ""))
 
