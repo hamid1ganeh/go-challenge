@@ -7,9 +7,9 @@ First of all you need to clone the project form current repository and then in o
 ```bash
 go mod tidy
 ```
-After that copy the .envExample file and past it in same directory and rename it to .env then open it and setup you'r SERVER_PORT,DB_Name, AWS_REGION, AWS_Accesskey and AWS_SecretKey.
+After that copy the .envExample file and past it in same directory and rename it to .env then open it and set up you'r SERVER_PORT,DB_Name, AWS_REGION, AWS_Accesskey and AWS_SecretKey.
 
-If you want to run project unit tests please go to test dirctory which is located in root of project and then execute follow command:
+If you want to run project unit tests please go to test directory which is located in the root of project and then execute follow command:
 ```bash
 go test
 ```
@@ -26,11 +26,11 @@ After  uploaded you'r porject on aws lambda service successfully you will recive
  
 
 ## Usage/Examples
-In order to send http request you can use below examples:
+In order to send http request, you can use below examples:
 
 #### Create Endpoint:
 curl --request POST \
-  --url localhost:1370/api/devices \
+  --url https://4bktavifb3.execute-api.us-east-1.amazonaws.com/dev/api/devices \
   --header 'Content-Type: application/json' \
   --data '{
     "id": "/devices/id1",
@@ -41,7 +41,7 @@ curl --request POST \
 
 #### Get Endpoint:
 curl --request GET \
-  --url localhost:1370/api/devices/id1
+  --url https://4bktavifb3.execute-api.us-east-1.amazonaws.com/dev/api/devices/id1
 
  
 ## Technologies used:
