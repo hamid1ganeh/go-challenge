@@ -22,7 +22,7 @@ Now please open th serverless.yaml in line 9 specify you'r aws lambda region and
 ```bash
 make deploy
 ```
-After  uploaded you'r porject on aws lambda service successfully you will recived 2 Endpoint and you can send you'r http request to them. 
+After  uploaded you'r porject on aws lambda service successfully you will recive 2 Endpoint and you can send you'r http request to them. 
  
 
 ## Usage/Examples
