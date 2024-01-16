@@ -1,6 +1,6 @@
 
 
-![Logo](https://media.licdn.com/dms/image/D4D12AQGYvrJwYEpXdw/article-cover_image-shrink_720_1280/0/1665747068873?e=2147483647&v=beta&t=736Ys7pj1I7p_IJB7FviK5RjFUjideODD54Fu16L4XY)
+![Logo](https://github.com/hamid1ganeh/go-challenge/blob/main/logo.jpeg)
 
 # Go-Challenge
 First of all you need to clone the project form current repository and then in order to download project dependencies please run follow command in root of project directory:
